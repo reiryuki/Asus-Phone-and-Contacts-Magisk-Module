@@ -11,6 +11,9 @@
 - https://apkmirror.com com.asus.dialer and com.asus.contacts by Mobile, ASUSTek Computer Inc.
 - libmagiskpolicy.so: Kitsune Mask R6687BB53
 
+## Screenshots
+- https://t.me/androidryukimods/2608
+
 ## Requirements
 - Android 10 (SDK 29) and up
 - Magisk or KernelSU installed
