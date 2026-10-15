@@ -166,11 +166,23 @@ APPS="`ls $MODPATH/system/priv-app`
       `ls $MODPATH/system/app`"
 hide_oat
 
-
-
-
-
-
+# prepare
+PKG=com.asus.dialer
+DIR=/storage/emulated/"$UID"/Android/data/$PKG/files
+DIR2=/storage/emulated/"$UID"/Android/data/$PKG/cache
+PKG=com.asus.contacts
+DIR3=/storage/emulated/"$UID"/Android/data/$PKG/files
+DIR4=/storage/emulated/"$UID"/Android/data/$PKG/cache
+ui_print "- Creating directories:"
+ui_print "  $DIR"
+mkdir -p $DIR
+ui_print "  $DIR2"
+mkdir -p $DIR2
+ui_print "  $DIR3"
+mkdir -p $DIR3
+ui_print "  $DIR4"
+mkdir -p $DIR4
+ui_print " "
 
 
 

@@ -30,7 +30,7 @@ fi
 
 # grant
 PKG=com.asus.contacts
-if appops get $PKG > /dev/null 2>&1; then
+if appops get $PKG >/dev/null 2>&1; then
   pm grant --all-permissions $PKG
   appops set $PKG SYSTEM_ALERT_WINDOW allow
   if [ "$API" -ge 30 ]; then
@@ -42,7 +42,7 @@ if appops get $PKG > /dev/null 2>&1; then
     appops set $PKG ACCESS_RESTRICTED_SETTINGS allow
   fi
   PKGOPS=`appops get $PKG`
-  UID=`dumpsys package $PKG 2>/dev/null | grep -m 1 Id= | sed -e 's|    userId=||g' -e 's|    appId=||g'`
+  UID=`grep "^$PKG " /data/system/packages.list | awk '{print $2}'`
   if [ "$UID" ] && [ "$UID" -gt 9999 ]; then
     UIDOPS=`appops get --uid "$UID"`
   fi
@@ -50,7 +50,7 @@ fi
 
 # grant
 PKG=com.asus.dialer
-if appops get $PKG > /dev/null 2>&1; then
+if appops get $PKG >/dev/null 2>&1; then
   pm grant --all-permissions $PKG
   appops set $PKG SYSTEM_ALERT_WINDOW allow
   appops set $PKG WRITE_SMS allow
@@ -63,25 +63,12 @@ if appops get $PKG > /dev/null 2>&1; then
   if [ "$API" -ge 33 ]; then
     appops set $PKG ACCESS_RESTRICTED_SETTINGS allow
   fi
-  APP=AsusDialer
-  NAME=android.permission.READ_CALL_LOG
-  if ! dumpsys package $PKG | grep "$NAME: granted=true"; then
-    FILE=`find $MODPATH/system -type f -name $APP.apk`
-    pm install -g -i com.android.vending $FILE
-    pm uninstall -k $PKG
-  fi
   PKGOPS=`appops get $PKG`
-  UID=`dumpsys package $PKG 2>/dev/null | grep -m 1 Id= | sed -e 's|    userId=||g' -e 's|    appId=||g'`
+  UID=`grep "^$PKG " /data/system/packages.list | awk '{print $2}'`
   if [ "$UID" ] && [ "$UID" -gt 9999 ]; then
     UIDOPS=`appops get --uid "$UID"`
   fi
 fi
-
-
-
-
-
-
 
 
 
